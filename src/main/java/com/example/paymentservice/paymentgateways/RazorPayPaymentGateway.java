@@ -21,7 +21,7 @@ public class RazorPayPaymentGateway implements IPaymentGateway {
     private String secret;
 
     @Override
-    public String getPaymentLink(double amount, String orderId,
+    public String getPaymentLink(Long amount, String orderId,
                                  String customerName, String customerContact, String customerEmail) {
         {
             // Logic to create a payment link using RazorPay API

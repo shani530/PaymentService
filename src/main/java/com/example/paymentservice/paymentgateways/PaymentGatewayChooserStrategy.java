@@ -8,11 +8,12 @@ public class PaymentGatewayChooserStrategy {
    @Autowired
     private RazorPayPaymentGateway razorPayPaymentGateway;
 
+    @Autowired
+    private StripePaymentGateway stripePaymentGateway;
 
-
-    public String getPaymentLink(double amount, String orderId, String customerName, String customerContact, String customerEmail) {
+    public IPaymentGateway getBestPaymentGateway() {
         // Logic to choose the payment gateway based on some criteria
-        // For simplicity, we are directly using RazorPayPaymentGateway here
-        return razorPayPaymentGateway.getPaymentLink(amount, orderId, customerName, customerContact, customerEmail);
+
+       return stripePaymentGateway;
     }
 }
